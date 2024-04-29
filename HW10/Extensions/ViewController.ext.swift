@@ -61,17 +61,15 @@ extension ViewController {
         
         func createImageSection() -> NSCollectionLayoutSection {
             
-            let itemLayoutSize = NSCollectionLayoutSize(widthDimension: .absolute(370), heightDimension: .fractionalHeight(1))
+            let itemLayoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
             let item = NSCollectionLayoutItem(layoutSize: itemLayoutSize)
-            // выставляю парметры отступов тут, а не для группы
-            item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 23, trailing: 30)
             
             let groupLayoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(239))
             let group = NSCollectionLayoutGroup.vertical(layoutSize: groupLayoutSize, repeatingSubitem: item, count: 1)
-            // group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+            group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 23, trailing: 0)
             
             let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 0)
+            section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 30)
             return section
         }
     }
